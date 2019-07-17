@@ -1,3 +1,7 @@
 name: AdventureItems
 version: ${project.version}
 main: bounen057.adventureitems.AdventureItems
+
+commands:
+  adventureitem:
+  aitem:
