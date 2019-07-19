@@ -17,7 +17,42 @@ public class GetCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player p = (Player)sender;
 
-        new LevelTools(plugin).getItem(p,"Pickel",1);
+        if(args[0].equals("help")){
+            p.sendMessage("§e§l[§a§l§m===="+ plugin.logo +"§a§l§m====§e§l]");
+            p.sendMessage("§a/aitem leveltool get <type> <lv>" + "§7-レベルツールを出します");
+            p.sendMessage("§a/aitem leveltool list" + "§7-type一覧を出します");
+            p.sendMessage("§a/aitem offhand get <type>" + "§7-アクセサリーを出します");
+            p.sendMessage("§a" + "§7-");
+        }
+
+
+
+        if(args[0].equals("leveltool")){
+            if(args[1].equals("get")){
+                String type = args[2];
+                int lv = Integer.parseInt(args[3]);
+
+                if(!new LevelTools(plugin).getItem(p,type,lv)){
+                    p.sendMessage(plugin.logo+"§cERROR:正常な値が含まれていません");
+                    return false;
+                }
+
+                p.sendMessage(plugin.logo+"§aツールを付与しました");
+            }
+            if(args[1].equals("list")){
+                p.sendMessage(plugin.logo+" §6§lツールの種類一覧§e§l§m------------");
+                p.sendMessage("§a-Pickel");
+                p.sendMessage("§a-Shovel");
+            }
+        }
+
+
+        if(args[0].equals("offhand")){
+            if(args[1].equals("get")){
+
+            }
+        }
+
         return false;
     }
 
