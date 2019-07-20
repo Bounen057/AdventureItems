@@ -1,6 +1,7 @@
 package bounen057.adventureitems;
 
 import bounen057.adventureitems.commands.GetCommand;
+import bounen057.adventureitems.items.BoneSword;
 import bounen057.adventureitems.items.LevelTools;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,6 +21,7 @@ public final class AdventureItems extends JavaPlugin {
         Bukkit.getPluginCommand("aitem").setExecutor(new GetCommand(this));
 
         Bukkit.getPluginManager().registerEvents(new ChangePaperListener(this),this);
+        Bukkit.getPluginManager().registerEvents(new BoneSword(this),this);
         Bukkit.getPluginManager().registerEvents(new LevelTools(this),this);
 
     }

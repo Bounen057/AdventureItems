@@ -1,5 +1,6 @@
 package bounen057.adventureitems;
 
+import bounen057.adventureitems.items.BoneSword;
 import bounen057.adventureitems.items.NormalSword;
 import com.sun.tools.javac.comp.Check;
 import org.bukkit.Material;
@@ -18,12 +19,14 @@ public class ChangePaperListener implements Listener {
         this.plugin = plugin;
     }
 
-    public String[] items = {""};
+    public String[] items = {"normalsword","bonesword"};
 
-    private ItemStack get(String name){
+    public ItemStack get(String name){
         switch (name) {
             case "normalsword":
                 return new NormalSword(plugin).item();
+            case "bonesword":
+                return new BoneSword(plugin).item();
 
         }
         return null;

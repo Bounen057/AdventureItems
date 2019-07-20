@@ -64,8 +64,10 @@ public class LevelTools implements Listener{
         switch (tooltype){
             case "Pickel":
                 Meta_Pickel1(e.getPlayer(),itemMeta,toollv);
+                break;
             case "Shovel":
                 Meta_Shovel1(e.getPlayer(),itemMeta,toollv);
+                break;
         }
 
         itemMeta.setLore(lore);
@@ -81,6 +83,7 @@ public class LevelTools implements Listener{
         ItemMeta itemMeta = item.getItemMeta();
         List<String> lore = new ArrayList<>();
 
+
         switch (type){
             case "Pickel":
                 item = new ItemStack(Material.STONE_PICKAXE);
@@ -94,6 +97,8 @@ public class LevelTools implements Listener{
                 lore.add("");
                 lore.add("§7採掘数: "+Pickel_next[lv]);
                 lore.add("§e使って見てね!");
+
+                break;
 
             case "Shovel":
                 item = new ItemStack(Material.IRON_SPADE);
